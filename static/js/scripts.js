@@ -1,7 +1,15 @@
-// let tooglebutton = document.getElementById('nav-toggle');
-// let navlist = document.getElementById('nav-list');
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navigationBar").style.top = "0";
+  } else {
+    document.getElementById("navigationBar").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
-// tooglebutton.addEventListener('click', () => {navlist.classList.toggle("active");});
+
 
 
     const txts=document.querySelector(".animate-text").children,

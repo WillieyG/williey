@@ -1,151 +1,49 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     /* outline: 1px solid red;  */
 }
-body{
-    background-color: rgb(255, 208, 0);
-    height: 100%;
+body {
     margin: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 255); 
+    font-family: 'ITC Officina Sans Std', sans-serif;
 }
-header{
+.logo-image{
+    padding: 1px;
+    display: block;
+    height: 35px;
+}
+.navbar {
     position: fixed;
+    top: 0;
+    transition: top 0.3s;
+    width: 100%;
+    /* z-index: 99; */
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
-    width: 100%;
-    transition: top 0.3s;
-    background-color: #fff;
-    overflow: hidden;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
 }
-.logoImage{
-    margin: 7.5px;
-    height: 35px;
-    width: auto;
-}
-#toggle{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
+.nav-links {
     margin: 0;
     padding: 0;
-    background: #9051ff;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
     overflow: hidden;
 }
-#toggle::before{
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 2px;
-    background: #fff;
-    transform: translateY(-5px);
-    transition: 0.2s;
-}
-#toggle::after{
-    content: '';
-    position: absolute;
-    width: 28px;
-    height: 2px;
-    background: #fff;
-    transform: translateY(5px);
-    transition: 0.2s;
-}
-#toggle.active::before{
-    transform: translateY(0px) rotate(45deg)
-}
-#toggle.active::after{
-    transform: translateY(0px) rotate(-45deg)
-}
-#toggle.active{
-    background: #e60026;
-}
-#navbar{
-    position: relative;
-    height: auto;
-    right: 50px;
-    background: #fff;
-    transition: 0.5s;
-    width: 0px;
-    overflow: hidden;
-}
-#navbar.active{    
-    margin-left: 50px;
-    width: 100%;
-    
-}
-#navbar ul{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    margin: 7.5px;
-    padding: 0px;
-    height: 35px;
-}
-#navbar ul li{
-    margin: 0px 10px;
+ul.nav-links li a {
     padding: 2px;
-    list-style: none;
-}
-#navbar ul li a{
-    color: #000;
-    height: auto;
-    display: inline-block;
+    color: black;
     text-decoration: none;
-    font-size: 1.2em;
-    letter-spacing: 2px;
-    padding: 0px;
-    margin: 0px;
 }
-/* #navbar ul li a:hover{
-    color: #fff;
-    background: #f7226a;
-} */
-@media (max-width: 500px){
-    #navbar{
-        position: fixed;
-        bottom: -100%;
-        right: 0;
-        width: 100%;
-        transition: 2.5s;
-        transition-delay: 0.1s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #navbar.active{
-        top: 0;
-        bottom: 0;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-    }
-    #navbar ul{
-        margin: 7.5px;
-        padding: 0px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #navbar ul li{
-        margin: 10px 0px;
-        padding: 2px;
-        list-style: none;
-    }
-    .resumeBtn{
-        display: none;
-    }
+ul.nav-links li {
+    list-style: none;
+    overflow: hidden;
 }
 
 /* Resume button styling */
+/* From cssbuttons.io by @nikk7007 */
 .resumeBtn {
     padding: 0px 2px;
     border: 2px solid #17C3B2;
@@ -160,6 +58,7 @@ header{
     font-family: inherit;
     color: #17C3B2;
 }
+   
 .resumeBtn::before {
     content: '';
     width: 0;
@@ -179,8 +78,29 @@ header{
 .resumeBtn:hover {
     color: #111;
 }
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+/* .menu li:hover {
+background-color: #4c9e9e;
+border-radius: 215px 5px;
+transition: 0.3s ease;
+} */
 
-/* Home section styling */
+input[type=checkbox]{
+    display: none;
+} 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+
+
+/* sectionOne-home styling start */
 .sectionOne-home{    
     display: flex;
     flex-wrap: wrap;
@@ -188,10 +108,12 @@ header{
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    background-color: #f1faee;
+    min-height: max-content;
+    background-color: #ffffff;
     background-position: center bottom;
     background-size: cover;
-    height: 100vh;
+    padding: 0px 50px;
+    margin-top: 70px;
 }
 .sectionOne-home h3{
     margin-top: 70px;
@@ -238,9 +160,8 @@ header{
 
 	}
 }
-
 .sectionOne-home p{
-    margin: 10px;
+    margin: 10px 0px;
     padding: 10px;
     overflow: hidden;
     text-align: center;
@@ -250,10 +171,11 @@ header{
     font-weight: 200;
     word-spacing: 0px;
 }
+
+/* Arrow styling start */
 .arrow{
     margin-top: 70px;
-    padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -287,11 +209,13 @@ header{
         transform: rotate(45deg) translate(20px,20px);
     }
 }
+/* Arrow styling end */
+/* sectionOne-home styling end */
 
-/* About section styling */
+
+/* sectionTwo-About styling start */
 .sectionTwo-About{
-    font-family: 'Alliance Personal Use',sans-serif;                                               
-    background-color: #0a192f;
+    background-color: #112240;
     display: block;
     text-align: center;
 }
@@ -300,9 +224,10 @@ header{
 }
 .sectionTwo-About .tabButton h1 { 
     margin: 0;
-    color: #e71d36;   
+    color: #06A8FF;   
     font-size: 15px;
     letter-spacing: 1px;
+    font-weight: bold; 
     padding: 15px 20px; 
 }
 @-webkit-keyframes showTab{
@@ -340,7 +265,7 @@ header{
 .sectionTwo-About .tabButton{
     display:block;
     margin-top:0px;
-    background: #f1faee;
+    background: #fff;
     color:rgb(0, 0, 0);
     text-align:center;
     -webkit-transition:all 250ms ease-in-out;
@@ -357,63 +282,6 @@ header{
     animation:showTab 250ms ease-in-out
 }
 
-.sectionTwo-About .tab{
-    background:#0a192f;
-    display:none;
-    text-align: left;
-}
-.sectionTwo-About .tab .content i{
-    color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:center;
-}
-.sectionTwo-About .tab .content i h3{
-    color: #ffffff;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    font-weight: bold;
-}
-.sectionTwo-About .tab .content h4{
-    color: #e71d36;
-    font-size: 17px;
-    font-weight: 450;
-    letter-spacing: 0.5px;
-    margin: 9px;
-    padding: 2px;
-    width: fit-content;
-}
-.sectionTwo-About .tab .content p {
-    letter-spacing: 1px;
-    color: rgb(255, 255, 255);
-    font-size: 17px;
-    margin-top: 10px; 
-    font-weight: 350;
-}
-.sectionTwo-About .tab .content .list{
-    color: rgb(255, 255, 255);
-}
-.tab .content .stackIcons{
-    display: flex;
-    flex-wrap: wrap;
-}
-.tab .content .stackIcons p{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    width: fit-content;
-}
-.tab .content .stackIcons p img{
-    padding: 0%;
-    margin: 0%;
-    width: 80px;
-    height: 80px;
-}
 @media screen and (min-width: 768px){
     .sectionTwo-About{
         display:-webkit-box;
@@ -436,7 +304,7 @@ header{
         cursor:pointer;
     }
     .sectionTwo-About input:checked+label{
-        background:#0a192f;
+        background:#112240;
         color:#fff;
     }
     .sectionTwo-About .tab{
@@ -446,48 +314,91 @@ header{
         order:2
     }
 }
-@media (max-width: 600px) {
-    .sectionTwo-About input:checked+label{
-        background:#0a192f;
-        color:#fff;
-    }
+.sectionTwo-About .tab{
+    background:#112240;
+    display:none;
+    text-align: left;
 }
+.sectionTwo-About .tab .content i{
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+}
+.sectionTwo-About .tab .content i h3{
+    color: #ffffff;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.sectionTwo-About .tab .content h4{
+    color: #fffb0098;
+    font-size: 17px;
+    font-weight: 1000;
+    margin: 9px;
+    padding: 2px;
+    width: fit-content;
+}
+.sectionTwo-About .tab .content p {
+    color: #ffffff;
+    font-size: 19px;
+    margin-top: 10px; 
+    font-weight: 500;
+}
+.sectionTwo-About .tab .content .list{
+    color: #ffffff;
+}
+.tab .content .stackIcons{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tab .content .stackIcons p{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    width: fit-content;
+}
+.tab .content .stackIcons p img{
+    padding: 0%;
+    margin: 0%;
+    width: 80px;
+    height: 80px;
+}
+/* sectionTwo-About styling end */
 
-/* Portfolio section styling */
+
+/* sectionThree-portfolio styling start */
 .sectionThree-portfolio{
     background-color: #daff06;
 }
+/* sectionThree-portfolio styling end */
 
-/* Contact section styling */
+
+/* sectionFour-Contact styling start */
 .sectionFour-Contact{   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     min-height: max-content;
-    background-color: #f1faee;
+    background-color: #aaa;
 }
 .sectionFour-Contact .heading-area{
     padding: 0;
-    margin: 0px 10px;
-}
-.sectionFour-Contact .heading-area h1{
-    margin: 5px;
-    padding: 0px 20px;
-    text-transform: uppercase;
-    font: 700 16px 'Oswald', sans-serif;
-    letter-spacing: 2px;
-    color: rgb(0, 0, 0);
+    margin: 10px;
 }
 .sectionFour-Contact .heading-area p{
-    font-size: 18px;
-    margin: 5px;
-    padding: 0px 20px ;
-    color: rgb(0, 0, 0);
+    margin: auto;
+    padding: 20px 0;
 }
 .sectionFour-Contact .contact-wrapper{
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 10px;
+    margin: 10px;
 }
 .sectionFour-Contact .heading-area{
     display: flex;
@@ -523,8 +434,8 @@ header{
     margin: 0px;
     width: 700px;
     overflow: hidden;
-    color: rgb(0, 0, 0);
-    text-decoration: solid rgb(0, 0, 0);;
+    color: rgb(255, 255, 255);
+    text-decoration: solid rgb(255, 255, 255);
     text-transform: uppercase;
     vertical-align: center;
     word-spacing: 2px;
@@ -563,29 +474,82 @@ header{
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
-@media (max-width: 600px) {
-    .sectionFour-Contact .left-contact-wrapper .send-button{
-        width: 100%;
-    }
-    .sectionFour-Contact .contact-wrapper{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .sectionFour-Contact .left-contact-wrapper{
-        width: 100%;
-        margin: 10px;
-    }
-    .sectionFour-Contact .right-contact-wrapper .contact-list .list-item{
-        margin: 0;
-        padding: 0;
-        line-height: 2;
-    }
+
+
+
+/* @media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .socials-wrapper, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .socials-wrapper {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
-/* Footer styling */
+@media screen and (max-width: 569px) {
+
+  .socials-wrapper, .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }  
+  .form-control, textarea {
+    
+    margin: 0 auto;
+  }
+ 
+  
+  .name, .email, textarea {
+    width: 280px;
+  } 
+  
+  .socials-wrapper {
+    margin-top: 60px;
+    max-width: 280px;
+  }  
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+  
+}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
+} */
+
+
 footer{
     font-size: 13px;
     padding: 10px;
     text-align: center;
     color: #000000;
 }
+
