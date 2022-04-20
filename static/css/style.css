@@ -200,6 +200,7 @@ header{
     padding: 10px;
     overflow: hidden;
     color: #000000;
+    font-weight: normal;
 }
 .sectionOne-home h2{
     margin: 0px;
@@ -210,7 +211,7 @@ header{
     padding: 5px;
     font-size: 30px;
     color: #000000;
-    font-weight: 500;
+    font-weight: normal;
     display: inline-block;
     line-height: 46px;
     display: none;
