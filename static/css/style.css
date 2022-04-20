@@ -6,7 +6,7 @@
     /* outline: 1px solid red;  */
 }
 body{
-    background-color: rgb(255, 208, 0);
+    background-color: #f1faee;
     height: 100%;
     margin: 0;
 }
@@ -33,7 +33,7 @@ header{
     height: 50px;
     margin: 0;
     padding: 0;
-    background: #9051ff;
+    background: #0a192f;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -206,6 +206,7 @@ header{
     overflow: hidden;
 }
 .sectionOne-home h2 span{
+    font-family:  'ITC Officina Sans Std', sans-serif;
     padding: 5px;
     font-size: 30px;
     color: #000000;
@@ -343,8 +344,8 @@ header{
     background: #f1faee;
     color:rgb(0, 0, 0);
     text-align:center;
-    -webkit-transition:all 250ms ease-in-out;
-    transition:all 250ms ease-in-out
+    -webkit-transition:all 20ms ease-in-out;
+    transition:all 1000ms ease-in-out
 }
 .sectionTwo-About input{
     display:none
@@ -353,8 +354,8 @@ header{
     display:block
 }
 .sectionTwo-About input:checked+label+.tab>.content{
-    -webkit-animation:showTab 250ms ease-in-out;
-    animation:showTab 250ms ease-in-out
+    -webkit-animation:showTab 1000ms ease-in-out;
+    animation:showTab 1000ms ease-in-out
 }
 
 .sectionTwo-About .tab{
@@ -411,8 +412,8 @@ header{
 .tab .content .stackIcons p img{
     padding: 0%;
     margin: 0%;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 @media screen and (min-width: 768px){
     .sectionTwo-About{
@@ -455,7 +456,16 @@ header{
 
 /* Portfolio section styling */
 .sectionThree-portfolio{
-    background-color: #daff06;
+    font-family: 'Alliance Personal Use',sans-serif;                                               
+    background-color: #0a192f;
+}
+.sectionThree-portfolio p{
+    font-size: 17px;
+    font-weight: 350;
+    letter-spacing: 1px;
+    margin: 5px 15px;
+    padding: 5px 0px;
+    color: rgb(255, 255, 255);
 }
 
 /* Contact section styling */
